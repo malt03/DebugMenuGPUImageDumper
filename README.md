@@ -9,6 +9,14 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### Output Example
+```
+<GPUImageVideoCamera: 0x156570ff0>
+└<GPUImageToonFilter: 0x156645c00>
+　└<GPUImageMonochromeFilter: 0x156646370>
+　　└<GPUImageView: 0x156584ee0; frame = (0 0; 375 667); autoresize = W+H; layer = <CAEAGLLayer: 0x156585130>>
+```
+
 ## Usage
 
 ### Initialize
