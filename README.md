@@ -22,7 +22,7 @@ pod "DebugMenuGPUImageDumper"
 
 ## Author
 
-Koji Murata, koji.murata@dena.com
+Koji Murata, malt.koji@gmail.com
 
 ## License
 
