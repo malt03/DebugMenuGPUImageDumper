@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DebugMenuGPUImageDumper_Example' do
+  pod 'DebugMenuGPUImageDumper', :path => '../'
+
+  target 'DebugMenuGPUImageDumper_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
