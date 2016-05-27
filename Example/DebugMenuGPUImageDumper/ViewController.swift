@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import GPUImage
+import DebugMenuGPUImageDumper
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  private var previewView: GPUImageView {
+    return view as! GPUImageView
+  }
+  
+  private let videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPresetHigh, cameraPosition: .Back)
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    GPUImageDumper.sharedInstance.appendRootInstance(videoCamera)
+    
+    videoCamera.outputImageOrientation = .Portrait
+    
+    let filter0 = GPUImageToonFilter()
+    let filter1 = GPUImageMonochromeFilter()
+    
+    videoCamera.addTarget(filter0)
+    filter0.addTarget(filter1)
+    filter1.addTarget(previewView)
+    
+    videoCamera.startCameraCapture()
+  }
 }
-

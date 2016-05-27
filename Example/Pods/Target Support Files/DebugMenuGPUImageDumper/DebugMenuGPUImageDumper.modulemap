@@ -1,0 +1,6 @@
+framework module DebugMenuGPUImageDumper {
+  umbrella header "DebugMenuGPUImageDumper-umbrella.h"
+
+  export *
+  module * { export * }
+}

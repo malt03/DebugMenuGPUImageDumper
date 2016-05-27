@@ -1,0 +1,22 @@
+PODS:
+  - DebugHead (0.1.0)
+  - DebugMenuGPUImageDumper (0.1.0):
+    - DebugHead (~> 0.1.0)
+    - GPUImage (~> 0.1.7)
+  - GPUImage (0.1.7)
+
+DEPENDENCIES:
+  - DebugMenuGPUImageDumper (from `../`)
+
+EXTERNAL SOURCES:
+  DebugMenuGPUImageDumper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DebugHead: cc5b9a163187582596e27ee536b855f04ed651ba
+  DebugMenuGPUImageDumper: 9877ba7ab529572acdd0fc04215235b3002356c4
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+
+PODFILE CHECKSUM: 7b6d67b2b5e25ec72e05c1e505aedf79f22f3a1d
+
+COCOAPODS: 1.0.0
