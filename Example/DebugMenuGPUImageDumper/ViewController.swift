@@ -11,18 +11,18 @@ import GPUImage
 import DebugMenuGPUImageDumper
 
 class ViewController: UIViewController {
-  private var previewView: GPUImageView {
+  fileprivate var previewView: GPUImageView {
     return view as! GPUImageView
   }
   
-  private let videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPresetHigh, cameraPosition: .Back)
+  private let videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPresetHigh, cameraPosition: .back)!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     GPUImageDumper.sharedInstance.appendRootInstance(videoCamera)
     
-    videoCamera.outputImageOrientation = .Portrait
+    videoCamera.outputImageOrientation = .portrait
     
     let filter0 = GPUImageToonFilter()
     let filter1 = GPUImageMonochromeFilter()
@@ -31,6 +31,6 @@ class ViewController: UIViewController {
     filter0.addTarget(filter1)
     filter1.addTarget(previewView)
     
-    videoCamera.startCameraCapture()
+    videoCamera.startCapture()
   }
 }

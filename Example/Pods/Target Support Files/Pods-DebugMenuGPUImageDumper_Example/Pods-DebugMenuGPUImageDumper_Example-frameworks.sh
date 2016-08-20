@@ -84,11 +84,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/BugImageCreator/BugImageCreator.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DebugHead/DebugHead.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DebugMenuGPUImageDumper/DebugMenuGPUImageDumper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GPUImage/GPUImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/BugImageCreator/BugImageCreator.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DebugHead/DebugHead.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DebugMenuGPUImageDumper/DebugMenuGPUImageDumper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GPUImage/GPUImage.framework"

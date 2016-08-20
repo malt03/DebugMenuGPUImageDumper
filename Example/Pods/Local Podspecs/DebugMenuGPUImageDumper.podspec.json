@@ -1,9 +1,9 @@
 {
   "name": "DebugMenuGPUImageDumper",
-  "version": "0.1.0",
-  "summary": "A short description of DebugMenuGPUImageDumper.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/DebugMenuGPUImageDumper",
+  "version": "0.2.0-beta1",
+  "summary": "Easy to dump GPUImage targets",
+  "description": "This is a pod to dumping GPUImage targets with DebugHead.",
+  "homepage": "https://github.com/malt03/DebugMenuGPUImageDumper",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "Koji Murata": "malt.koji@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/DebugMenuGPUImageDumper.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/malt03/DebugMenuGPUImageDumper.git",
+    "tag": "0.2.0-beta1"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,7 +21,7 @@
   "source_files": "DebugMenuGPUImageDumper/Classes/**/*",
   "dependencies": {
     "DebugHead": [
-      "~> 0.1.0"
+      "~> 0.2.0-beta1"
     ],
     "GPUImage": [
       "~>0.1.7"

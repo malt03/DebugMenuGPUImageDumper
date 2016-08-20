@@ -8,23 +8,23 @@
 
 import DebugHead
 
-public class DebugMenuGPUImageDumper: UIViewController, DebugMenu {
-  public static let debugMenuTitle = "GPUImage Dumper"
-  public static var debugMenuAccessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-  public static var debugMenuDangerLevel = DebugMenuDangerLevel.Low
-  public static func debugMenuSelected(debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
+open class DebugMenuGPUImageDumper: UIViewController, DebugMenu {
+  open static let debugMenuTitle = "GPUImage Dumper"
+  open static var debugMenuAccessoryType = UITableViewCellAccessoryType.disclosureIndicator
+  open static var debugMenuDangerLevel = DebugMenuDangerLevel.low
+  open static func debugMenuSelected(_ debugHead: UIView, debugMenuTableViewController: UITableViewController) -> UIViewController? {
     return DebugMenuGPUImageDumper()
   }
   
-  private let scrollView = UIScrollView()
+  fileprivate let scrollView = UIScrollView()
   
-  override public func viewWillAppear(animated: Bool) {
+  override open func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    view.backgroundColor = .whiteColor()
+    view.backgroundColor = .white
     
     let label = UILabel()
-    label.textAlignment = .Left
+    label.textAlignment = .left
     label.numberOfLines = -1
     let text = GPUImageDumper.sharedInstance.dumpAll()
     print(text)
@@ -37,7 +37,7 @@ public class DebugMenuGPUImageDumper: UIViewController, DebugMenu {
     scrollView.addSubview(label)
   }
   
-  override public func viewDidLayoutSubviews() {
+  override open func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     
     scrollView.frame = CGRect(origin: .zero, size: view.frame.size)

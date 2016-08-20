@@ -1,6 +1,8 @@
 use_frameworks!
 
 target 'DebugMenuGPUImageDumper_Example' do
+  pod 'BugImageCreator', git: 'https://github.com/malt03/BugImageCreator.git', tag: '0.4.0-beta1'
+  pod 'DebugHead', git: 'https://github.com/malt03/DebugHead.git', tag: '0.2.0-beta1'
   pod 'DebugMenuGPUImageDumper', :path => '../'
 
   target 'DebugMenuGPUImageDumper_Tests' do

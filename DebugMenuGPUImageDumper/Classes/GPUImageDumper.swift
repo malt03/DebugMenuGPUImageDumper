@@ -14,15 +14,15 @@ protocol DumpName {
 
 extension GPUImageOutput {
   func dumpTargets() -> String {
-    return ((self as? DumpName)?.dumpName ?? String(self)) + "\n" + dumpTargets("")
+    return ((self as? DumpName)?.dumpName ?? String(describing: self)) + "\n" + dumpTargets("")
   }
   
-  private func dumpTargets(prefix: String) -> String {
+  fileprivate func dumpTargets(_ prefix: String) -> String {
     let maxIndex = targets().count - 1
     var str = ""
-    for (i, child) in targets().enumerate() {
+    for (i, child) in targets().enumerated() {
       let last = (i == maxIndex)
-      let name = (child as? DumpName)?.dumpName ?? String(child)
+      let name = (child as? DumpName)?.dumpName ?? String(describing: child)
       str += prefix + (last ? "└" : "├") + name + "\n"
       if let o = child as? GPUImageOutput {
         str += o.dumpTargets(prefix + (last ? "　" : "│ "))
@@ -32,20 +32,20 @@ extension GPUImageOutput {
   }
 }
 
-public class GPUImageDumper {
-  public static let sharedInstance = GPUImageDumper()
-  private var rootInstances = [GPUImageWeakInstance]()
+open class GPUImageDumper {
+  open static let sharedInstance = GPUImageDumper()
+  fileprivate var rootInstances = [GPUImageWeakInstance]()
   
-  private init() {}
+  fileprivate init() {}
   
-  public func appendRootInstance(instance: GPUImageOutput) {
+  open func appendRootInstance(_ instance: GPUImageOutput) {
     for i in rootInstances {
       if instance === i.instance { return }
     }
     rootInstances.append(GPUImageWeakInstance(output: instance))
   }
   
-  public func dumpAll() -> String {
+  open func dumpAll() -> String {
     var str = ""
     for i in rootInstances {
       if let dump = i.instance?.dumpTargets() {

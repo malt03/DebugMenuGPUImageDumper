@@ -1,22 +1,41 @@
 PODS:
-  - DebugHead (0.1.0)
-  - DebugMenuGPUImageDumper (0.1.0):
-    - DebugHead (~> 0.1.0)
+  - BugImageCreator (0.4.0-beta1)
+  - DebugHead (0.2.0-beta1):
+    - BugImageCreator (~> 0.4.0-beta1)
+  - DebugMenuGPUImageDumper (0.2.0-beta1):
+    - DebugHead (~> 0.2.0-beta1)
     - GPUImage (~> 0.1.7)
   - GPUImage (0.1.7)
 
 DEPENDENCIES:
+  - BugImageCreator (from `https://github.com/malt03/BugImageCreator.git`, tag `0.4.0-beta1`)
+  - DebugHead (from `https://github.com/malt03/DebugHead.git`, tag `0.2.0-beta1`)
   - DebugMenuGPUImageDumper (from `../`)
 
 EXTERNAL SOURCES:
+  BugImageCreator:
+    :git: https://github.com/malt03/BugImageCreator.git
+    :tag: 0.4.0-beta1
+  DebugHead:
+    :git: https://github.com/malt03/DebugHead.git
+    :tag: 0.2.0-beta1
   DebugMenuGPUImageDumper:
     :path: "../"
 
+CHECKOUT OPTIONS:
+  BugImageCreator:
+    :git: https://github.com/malt03/BugImageCreator.git
+    :tag: 0.4.0-beta1
+  DebugHead:
+    :git: https://github.com/malt03/DebugHead.git
+    :tag: 0.2.0-beta1
+
 SPEC CHECKSUMS:
-  DebugHead: cc5b9a163187582596e27ee536b855f04ed651ba
-  DebugMenuGPUImageDumper: 9877ba7ab529572acdd0fc04215235b3002356c4
+  BugImageCreator: 60626f7dd94624d1957318795bd51aa36ff8e8a1
+  DebugHead: 6545b1c1766a548eaa9ae34a4b8ab0afe5da8607
+  DebugMenuGPUImageDumper: ff594f60ef79a152e065e67b2622cad784e962fd
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
 
-PODFILE CHECKSUM: 7b6d67b2b5e25ec72e05c1e505aedf79f22f3a1d
+PODFILE CHECKSUM: 264461e647d9c0018de4515cae9d645a73357919
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.0.beta.1
